@@ -10,7 +10,7 @@ const schema = buildSchema(`
   }
 
   type Sheet {
-    sheet: [Rows]
+    sheet: Rows
   }
 
   type Rows {
@@ -18,7 +18,7 @@ const schema = buildSchema(`
   }
 
   type Row {
-    row: [Cells]
+    row: Cells
   }
 
   type Cells {
