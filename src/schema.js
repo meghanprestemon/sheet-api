@@ -5,33 +5,30 @@ const schema = buildSchema(`
     userName: String!
   }
 
-  type Sheets {
+  type Spreadsheet {
+    spreadsheetId: String
     sheets: [Sheet]
   }
 
   type Sheet {
-    sheet: Rows
-  }
-
-  type Rows {
+    sheetName: String
+    range: String
+    values: [[String]]
     rows: [Row]
   }
 
   type Row {
-    row: Cells
-  }
-
-  type Cells {
     cells: [Cell]
   }
 
   type Cell {
-    cell: String
+    data: String
   }
 
   type Query {
-    user(userName: String!): User
-    sheets(userName: String!, sheetName: String): Sheets
+    user(userName: String): User
+    sheet(sheetName: String): Sheet
+    spreadsheet(spreadsheetId: String): Spreadsheet
   }
 `);
 
