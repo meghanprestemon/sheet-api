@@ -1,10 +1,8 @@
-const Row = require('./Row');
-
 class Sheet {
   constructor(sheet) {
-    this.sheet = sheet;
-    this.range = this.sheet.range;
-    this.values = this.sheet.values;
+    this.range = sheet.range;
+    this.majorDimension = sheet.majorDimension;
+    this.values = sheet.values;
   }
 }
 
